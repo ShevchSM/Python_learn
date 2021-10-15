@@ -30,3 +30,5 @@ print('% ', result)
 print(type(result))
 
 # example for git
+
+print(type(result))
