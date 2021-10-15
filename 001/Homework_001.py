@@ -28,3 +28,5 @@ print(type(result))
 result = first % second     # остаток от деления
 print('% ', result)
 print(type(result))
+
+# example for git
