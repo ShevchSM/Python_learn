@@ -1,25 +1,28 @@
 ####################################################################################################
 # 1) Дан список словарей persons в формате [{"name": "John", "age": 15}, ... ,{"name": "Jack", "age": 45}]
-persons11 = [{"name": "John", "age": 15}, {"name": "Jessy", "age": 15}, {"name": "Jozzy", "age": 17},
+persons11 = [{"name": "John", "age": 15}, {"name": "Jessy", "age": 16}, {"name": "Jozzy", "age": 17},
              {"name": "Jack", "age": 45}]
 
 # а) Напечатать имя самого молодого человека. Если возраст совпадает - напечатать все имена самых молодых.
 sort_age11 = sorted(persons11, key=lambda item: item["age"], reverse=False)
 for index11 in sort_age11:
-    if index11.get("age") == sort_age11[1].get("age"):
+    if index11.get("age") == sort_age11[0].get("age"):
         print("|1) а)|>>>", index11.get("name"))
 
 # б) Напечатать самое длинное имя. Если длина имени совпадает - напечатать все имена.
 sort_age12 = sorted(persons11, key=lambda item: len(item["name"]), reverse=True)
 for index12 in sort_age12:
-    if len(index12.get("name")) == len(sort_age12[1].get("name")):
+    if len(index12.get("name")) == len(sort_age12[0].get("name")):
         print("|1) б)|>>>", index12.get("name"))
 
 # в) Посчитать среднее количество лет всех людей из списка.
 sum_age = 0
 for index13 in persons11:
     sum_age += index13.get("age")
-result13 = sum_age/len(persons11)
+if len(persons11) > 0:
+    result13 = sum_age/len(persons11)
+else:
+    result13 = "No dictionary"
 print("|1) в)|>>>", result13)
 
 
