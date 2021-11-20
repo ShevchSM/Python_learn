@@ -30,7 +30,7 @@ print("|1.|>>>", modified_list(my_list01))
 def modified_list_first_symbol(list_input02):
     list_output02 = []
     for item02 in range(len(list_input02)):
-        if str(list_input02[item02])[0] == 'a':
+        if str(list_input02[item02]).startswith('a'):
             list_output02.append(str(list_input02[item02]))
     return list_output02
 
@@ -58,16 +58,15 @@ print("|3.|>>>", modified_list_find_symbol(my_list03))
 # котором могут быть как строки (type str) так и целые числа (type int).
 # Функция возвращает новый список в котором содержаться только строки из my_list.
 
-
 def modified_list_from_str(list_input04):
     list_output04 = []
-    for item04 in range(len(list_input04)):
-        if str(list_input04[item04]).isalpha():
-            list_output04.append(str(list_input04[item04]))
+    for str04 in list_input04:
+        if isinstance(str04, str):
+            list_output04.append(str04)
     return list_output04
 
 
-my_list04 = ["abc", "def", "ghi", "jkl", "mno", "pqr", "stu", "vwx", "yz"]
+my_list04 = [5, 9, "ghi", 10, 15, 25, 30, 32, 95]
 print("|4.|>>>", modified_list_from_str(my_list04))
 
 # 5. Написать функцию которой передается один параметр - строка my_str.
